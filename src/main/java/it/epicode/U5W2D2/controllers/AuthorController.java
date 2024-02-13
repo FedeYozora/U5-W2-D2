@@ -10,10 +10,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/authors")
 public class AuthorController {
+
     @Autowired
     private AuthorService authorService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<Author> getAuthor() {
         return authorService.getAuthors();
     }
@@ -23,7 +24,7 @@ public class AuthorController {
         return authorService.findById(id);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public Author saveAuthor(@RequestBody Author body) {
         return authorService.save(body);
     }
@@ -37,5 +38,4 @@ public class AuthorController {
     public void findByIdAndDelete(@PathVariable int id) {
         authorService.findByIdAndDelete(id);
     }
-
 }

@@ -1,17 +1,19 @@
 package it.epicode.U5W2D2.services;
 
 import it.epicode.U5W2D2.entities.Author;
-import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Getter
 @Service
 public class AuthorService {
     private List<Author> authors = new ArrayList<>();
+
+    public List<Author> getAuthors() {
+        return this.authors;
+    }
 
     public Author findById(int id) {
         Author authorFound = null;
